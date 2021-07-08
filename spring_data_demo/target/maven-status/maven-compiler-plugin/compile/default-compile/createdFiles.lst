@@ -1,0 +1,5 @@
+com\example\entity\Employer_.class
+com\example\entity\Job_.class
+com\example\entity\JPUser_.class
+com\example\entity\Candidate_.class
+com\example\entity\CandidateApplication_.class

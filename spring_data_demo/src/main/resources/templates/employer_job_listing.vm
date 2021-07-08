@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- Favicon icon -->
+        
+        <title>Employer - Job Listing</title>
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" href="/resources/assets/extra-libs/multicheck/multicheck.css">
+        <link href="/resources/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+        <link href="/resources/dist/css/style.min.css" rel="stylesheet">
+
+	
+	<script type="text/javascript">
+	function showDtls(drp) {
+
+		var d1 = drp.parentNode;
+		var d2 = d1.parentNode;
+		var d3 = d2.nextSibling.nextSibling;
+		var d4 = d3.childNodes[1];
+		var d5 = d4.nextSibling.nextSibling;
+
+		if (d4.style.display == "none") {
+			d4.setAttribute("style", "display:block;");
+			d5.setAttribute("style", "display:inline-grid;");
+		} else {
+			d4.setAttribute("style", "display:none;");
+			d5.setAttribute("style", "display:none;");
+
+		}
+
+		//document.createElement("div");
+	}		        
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    </head>
+
+    <body>
+
+        <div id="overlayer"></div>
+        <div class="loader">
+            <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Main wrapper - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <div id="main-wrapper">
+            <!-- ============================================================== -->
+            <!-- Topbar header - style you can find in pages.scss -->
+            <!-- ============================================================== -->
+            <header class="topbar" data-navbarbg="skin5">
+                <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                    <div class="navbar-header" data-logobg="skin5">
+                        <!-- This is for the sidebar toggle which is visible on mobile only -->
+                        <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+
+                        <a class="navbar-brand" href="index.html" style="background-color: #89ba16;">
+                            <div class="site-logo col-12 text-center" style="color: #fff;font-size: 1.5rem;letter-spacing: .2rem;text-transform: uppercase;">HappyJob</div>
+                        </a>
+
+                        <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
+                    </div>
+
+
+
+                    <div class="navbar-collapse collapse"  data-navbarbg="skin5" style="margin: auto; flex-grow: 0">
+                        <div class="navbar-nav ">
+                            <ul class=" navbar-nav  mr-auto ">
+                                <li><a href="/login" class="nav-link " style="padding-left: 20px; padding-right: 20px">Trang chủ</a></li>
+                                <li><a href="services" class="nav-link " style="padding-left: 20px; padding-right: 20px">Dịch vụ</a></li>
+                                <li><a href="portfolio" class="nav-link " style="padding-left: 20px; padding-right: 20px">Nhà tuyển dụng</a></li>
+                                <li><a href="blog" class="nav-link " style="padding-left: 20px; padding-right: 20px">Blog</a></li>
+                                <li><a href="contact" class="nav-link " style="padding-left: 20px; padding-right: 20px">Liên hệ</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <!-- ============================================================== -->
+            <!-- End Topbar header -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Left Sidebar - style you can find in sidebar.scss  -->
+            <!-- ============================================================== -->
+            <aside class="left-sidebar" data-sidebarbg="skin5">
+
+                <!-- Sidebar scroll-->
+                <div class="scroll-sidebar">
+                    <!-- Sidebar navigation-->
+                    <nav class="sidebar-nav">
+                        <ul id="sidebarnav" class="p-t-30">
+                            <li class="sidebar-item" style="text-align: center"> <a class="nav-link text-muted waves-effect waves-dark pro-pic" style="padding-bottom: 20px" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31">ITrust</a>
+
+                            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Quản lý việc làm </span></a>
+                                <ul aria-expanded="false" class="collapse  first-level">
+                                    <li class="sidebar-item"><a href="employer_post_job.htm" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Đăng tuyển dụng mới </span></a></li>
+                                    <li class="sidebar-item"><a href="employer_jobs.htm" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Tất cả tin tuyển dụng </span></a></li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Quản lý hồ sơ </span></a>
+                                <ul aria-expanded="false" class="collapse  first-level">
+                                    <li class="sidebar-item"><a href="employer-savedFile.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Hồ sơ đã lưu </span></a></li>
+                                    <li class="sidebar-item"><a href="/employer_view_responses.htm" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Hồ sơ ứnng tuyển </span></a></li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Thông tin công ty </span></a>
+                                <ul aria-expanded="false" class="collapse  first-level">
+                                    <li class="sidebar-item"><a href="employer-info.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Cập nhật thông tin </span></a></li>
+                                    <li class="sidebar-item"><a href="employer-changePassword.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Đổi mật khẩu </span></a></li>
+                                    <li class="sidebar-item"><a href="employer-changeAvt.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Đổi ảnh đại diện </span></a></li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/logout.htm" aria-expanded="false"><i class="mdi mdi-pencil"></i><span class="hide-menu">Đăng xuất</span></a></li>
+                        </ul>
+                    </nav>
+                    <!-- End Sidebar navigation -->
+                </div>
+                <!-- End Sidebar scroll-->
+            </aside>
+            <!-- ============================================================== -->
+            <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Page wrapper  -->
+            <!-- ============================================================== -->
+            <div class="page-wrapper">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="page-breadcrumb">
+                    <div class="row">
+                        <div class="col-12 d-flex no-block align-items-center">
+                            <div>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                                        <li class="breadcrumb-item active" >Danh sách tin tuyển dụng</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container-fluid">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th><b>Vị trí tuyển dụng</b></th>
+                                            <th><b>Loại công việc</b></th>
+                                            <th><b>Kinh nghiệm</b></th>
+                                            <th><b>Nơi làm việc</b></th>
+                                            <th><b>Công ty</b></th>
+                                            <th><b>Thời gian đăng tuyển</b></th>
+                                            <th><b>Hồ sơ ứng tuyể</b>n</th>
+                                            <th><b>Trạng Thái</b></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        #foreach ($job in $jobs)
+                                            <tr>
+                                                <td><button type="button" class="btn btn-success btn-sm"
+                                                        aria-label="Left Align" onclick="showDtls(this)">
+                                                        <span class="glyphicon glyphicon-triangle-bottom"
+                                                            aria-hidden="true"></span>
+                                                    </button></td>
+                                                <td>${job.title.toUpperCase()}</td>
+                                                <td>${job.type}</td>
+                                                <td>${job.experience}</td>
+                                                <td>$job.location</td>
+                                                <td>${job.employer.username.toUpperCase()}</td>
+                                                <td>$job.postedOn</td>
+                                                <td>
+                                                #set ($active = "active")
+                                                #set ($inactive = "inactive")
+                    
+                                                #if ($job.status == $active)
+                                                <div class="status active"></div>
+                                                
+                                                #elseif ($job.status == $inactive)
+                                                  <div class="status inactive"></div>
+                                                  
+                                                #else
+                                                    <div class="status deleted"></div>
+                                                #end
+                                                </td>
+                                                
+                                                #if($job.applicationCount)
+                                                    <td>
+                                                        <a href="employer_view_responses.htm?action=view&jobId=${job.id}"
+                                                        class="btn btn-info btn-xs" role="button">$job.applicationCount</a>
+                                                    </td>	
+                                                #else
+                                                    <td align="left">0</td>
+                                                #end
+                                                    
+                                                #*<td>
+                                                    <a href="employer_update_job.htm?jId=$job.id" class="btn btn-md btn-primary" role="button">Edit</a>
+                                                    <a href="employer_delete_job.htm?jId=$job.id" class="btn btn-md btn-primary" role="button">Delete</a>
+                                                
+                                                </td>	*#
+                                                
+                                                <td align="left">Open</td>
+                                                
+                                                #if ($job.status == 'active')
+                                                <td><a href="employer_update_job.htm?jId=$job.id"
+                                                    class="btn btn-info btn-xs" role="button">Edit</a></td>
+                                                    
+                                                    #else
+                                                        <td><a href="employer_update_job.htm?jId=$job.id"
+                                                    class="btn btn-info btn-xs disabled" role="button">Edit</a></td>
+                                                #end
+                                            </tr>
+                    
+                                            <tr>
+                                                <td style="display: none;"></td>
+                                                <td colspan="30" style="display: none;">
+                                                    <div class="row">
+                                                    <div class="col-md-12"><h3>Vị trí tuyển dụng: ${job.title}</h3></div>
+                    
+                                                        <div class="col-md-4">
+                                                        <h3>Nơi làm việc:</h3>
+                                                            ${job.location}
+                                                        </div>
+                                                        
+                                                        <div class="col-md-4">
+                                                        <h3>Thời gian đăng:</h3>
+                                                            ${job.postedOn}
+                                                            
+                                                        </div>
+                                                        
+                                                        <div class="col-md-4">
+                                                        <h3>Chi tiết</h3>
+                                                        
+                                                            <ul>
+                                                              <li><b>Kinh nghiệm :</b> ${job.experience} năm</li>
+                                                              <li><b>Loại công việc: </b> ${job.type}</li>
+                                                              <li><Trạng thái> ${job.status}</li>
+                                                             </ul>
+                                                        </div>
+                                                        
+                                                        <div class="col-md-12">
+                                                            <h3>Mô tả công việc</h3>
+                                                            ${job.description}
+                                                        </div>
+                    
+                                                        <div class="col-md-4">
+                                                        #if ($job.status == 'active')
+                                                        <a href="employer_delete_job.htm?jId=$job.id"
+                                                    class="btn btn-danger btn-xs" role="button" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+                                                    #else
+                                                    <a href="employer_delete_job.htm?jId=$job.id"
+                                                    class="btn btn-danger btn-xs" role="button" disabled>Delete</a>
+                                                    
+                                                    #end
+                                                        
+                                                        </div>
+                    
+                    
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                         #end
+                    
+                    
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="footer text-center">
+
+                </footer>
+
+            </div>
+
+        </div>
+
+        <script src="/resources/assets/libs/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap tether Core JavaScript -->
+        <script src="/resources/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+        <script src="/resources/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- slimscrollbar scrollbar JavaScript -->
+        <script src="/resources/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+        <script src="/resources/assets/extra-libs/sparkline/sparkline.js"></script>
+        <!--Wave Effects -->
+        <script src="/resources/dist/js/waves.js"></script>
+        <!--Menu sidebar -->
+        <script src="/resources/dist/js/sidebarmenu.js"></script>
+        <!--Custom JavaScript -->
+        <script src="/resources/dist/js/custom.min.js"></script>
+        <!-- this page js -->
+        <script src="/resources/assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
+        <script src="/resources/assets/extra-libs/multicheck/jquery.multicheck.js"></script>
+        <script src="/resources/assets/extra-libs/DataTables/datatables.min.js"></script>
+        <script>
+            /****************************************
+             *       Basic Table                   *
+             ****************************************/
+            $('#zero_config').DataTable();
+
+            
+        </script>
+
+    </body>
+
+</html>

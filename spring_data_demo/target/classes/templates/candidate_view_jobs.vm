@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Candidate View jobs</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="resources/css/custom-bs.css">
+        <link rel="stylesheet" href="resources/css/jquery.fancybox.min.css">
+        <link rel="stylesheet" href="resources/css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="resources/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="resources/fonts/line-icons/style.css">
+        <link rel="stylesheet" href="resources/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="resources/css/animate.min.css">
+
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="resources/css/style.css">
+
+<script type="text/javascript">
+	function showDtls(drp) {
+
+		var d1 = drp.parentNode;
+		var d2 = d1.parentNode;
+		var d3 = d2.nextSibling.nextSibling;
+		var d4 = d3.childNodes[1];
+		var d5 = d4.nextSibling.nextSibling;
+
+		if (d4.style.display == "none") {
+			d4.setAttribute("style", "display:block;");
+			d5.setAttribute("style", "display:inline-grid;");
+		} else {
+			d4.setAttribute("style", "display:none;");
+			d5.setAttribute("style", "display:none;");
+
+		}
+
+		//document.createElement("div");
+
+	}	        
+</script>
+</head>
+<body id="top">
+
+	
+	<div id="overlayer"></div>
+        <div class="loader">
+            <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+
+
+        <div class="site-wrap">
+
+            <div class="site-mobile-menu site-navbar-target">
+                <div class="site-mobile-menu-header">
+                    <div class="site-mobile-menu-close mt-3">
+                        <span class="icon-close2 js-menu-toggle"></span>
+                    </div>
+                </div>
+                <div class="site-mobile-menu-body"></div>
+            </div> <!-- .site-mobile-menu -->
+
+
+            <!-- NAVBAR -->
+            <header class="site-navbar mt-3">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="site-logo col-6"><a href="index.jsp">HappyJob</a></div>
+
+                        <nav class="mx-auto site-navigation">
+                            <ul class="site-menu js-clone-nav d-none d-xl-block ml-0 pl-0">
+                                <li><a href="/login" class="nav-link active">Trang chủ</a></li>
+                                <li><a href="services">Dịch vụ</a></li>
+                                <li><a href="portfolio">Nhà tuyển dụng</a></li>
+                                <li><a href="blog">Blog</a></li>
+                                <li><a href="contact">Liên hệ</a></li>
+                            </ul>
+                        </nav>
+
+                        <div class="right-cta-menu text-right d-flex aligin-items-center col-6">
+                            <div class="ml-auto">
+                                <a href="/edit_profile.htm" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-add"></span>Thông tin cá nhân</a>
+                                <a href="/logout.htm" class="btn btn-primary border-width-2 d-none d-lg-inline-block"><span class="mr-2 icon-lock_outline"></span>Đăng xuất</a>
+                            </div>
+                            <a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3"><span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
+                        </div>
+
+                    </div>
+                </div>
+            </header>
+
+            <!-- HOME -->
+            <section class="home-section section-hero overlay bg-image" style="background-image: url('images/hero_1.jpg');" id="home-section">
+
+                <div class="container">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-md-12">
+                            <div class="mb-5 text-center">
+                                <h1 class="text-white font-weight-bold">Happy Job - Happy Life</h1> 
+                            </div>
+                            <form method="post" class="search-jobs-form" action="recruitment.jsp">
+                                <div class="row mb-5">
+                                    <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                                        <input type="text" class="form-control form-control-lg" placeholder="Tiêu đề công việc, công ty...">
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                                        <select class="selectpicker" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Nơi làm việc">
+                                            <option>Anywhere</option>
+                                            <option>San Francisco</option>
+                                            <option>Palo Alto</option>
+                                            <option>New York</option>
+                                            <option>Manhattan</option>
+                                            <option>Ontario</option>
+                                            <option>Toronto</option>
+                                            <option>Kansas</option>
+                                            <option>Mountain View</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                                        <select class="selectpicker" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Loại công việc">
+                                            <option>Part Time</option>
+                                            <option>Full Time</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                                        <button type="submit" class="btn btn-primary btn-lg btn-block text-white btn-search"><span class="icon-search icon mr-2"></span>Tìm kiếm</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#next" class="scroll-button smoothscroll">
+                    <span class=" icon-keyboard_arrow_down"></span>
+                </a>
+
+            </section>
+
+            //
+            <div class="container">		
+                ##<c:if test="${success == 'true'}">
+                            
+                    ##		<h4 style="color: green">applied job !</h4>
+                                                
+                        ##	</c:if>
+                        <div class="row">
+                        <div data-role="main" class="ui-content">
+                    
+                        
+                            <table class="table table-striped" data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow"
+                             id="myTable" data-filter="true" data-input="#filterTable-input">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th><b>Vị trí tuyển dụng</b></th>
+                                        <th><b>Loại công việc</b></th>
+                                        <th><b>Kinh nghiệm</b></th>
+                                        <th><b>Nơi làm việc </b></th>
+                                        <th><b>Tên công ty</b></th>
+                                        <th><b>Đăng vào ngày</b></th>
+                                        <th><b>Trạng thái</b></th>
+                                        <th><b>Ứng tuyển</b></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    #foreach ($job in $jobs)
+                                        <tr>
+                                            <td><button type="button" class="btn btn-success btn-sm"
+                                                    aria-label="Left Align" onclick="showDtls(this)">
+                                                    <span class="glyphicon glyphicon-triangle-bottom"
+                                                        aria-hidden="true"></span>
+                                                </button></td>
+                                            <td>${job.title}</td>
+                                            <td>${job.type}</td>
+                                            <td>${job.experience}</td>
+                                            <td>${job.location}</td>
+                                            <td>${job.employer.username}</td>
+                                            <td>${job.postedOn}</td>
+                                            #*<c:if test="${job.jobStatus == 'closed' }">
+                
+                                                <td style="color: red">Closed</td>
+                                            </c:if>*#
+                                            <td>
+                                                #if($job.candidateApplicationStatus)
+                                                $job.candidateApplicationStatus.toUpperCase()
+                                                #else
+                                                NOT APPLIED
+                                                #end
+                                            </td>
+                                            <td>
+                                            #if(${job.candidateApplicationStatus})
+                                            <a class="btn btn-info btn-xs" disabled role="button" 
+                                                href="candidate_apply_jobs.htm?jobId=${job.id}">Apply</a>
+                                                #else
+                                            <a class="btn btn-info btn-xs"  role="button" 
+                                                href="candidate_apply_jobs.htm?jobId=${job.id}">Apply</a>
+                                            #end
+                                            </td>
+                                        </tr>
+                
+                                        <tr >
+                                            
+                                            <td colspan="9" style="display:none">
+                                                <div class="row">
+                                                <div class="col-md-12"><h3>Vị trí tuyển dụng: ${job.title}</h3></div>
+                
+                                                    <div class="col-md-4">
+                                                    <h3>Nơi làm việc:</h3>
+                                                        ${job.location}
+                                                    </div>
+                                                    
+                                                    <div class="col-md-4">
+                                                    <h3>Đăng vào:</h3>
+                                                        ${job.postedOn}
+                                                        
+                                                    </div>
+                                                    
+                                                    <div class="col-md-4">
+                                                    <h3>Chi tiết:</h3>
+                                                    
+                                                        <ul>
+                                                          <li>Kinh nghiệm : ${job.experience}</li>
+                                                          <li>Loại công việc : ${job.type}</li>
+                                                          <li>Trạng thái : ${job.status}</li>
+                                                         </ul>
+                                                    </div>
+                                                
+                                                    <div class="col-md-12">
+                                                        <h3>Mô tả công việc:</h3>
+                                                        ${job.description}
+                                                    </div>
+                
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    #end
+                
+                
+                                </tbody>
+                                </div>
+                            </table>
+                        </div>
+                
+                
+                    </div>
+
+            <section class="py-5 bg-image overlay-primary fixed overlay" style="background-image: url('images/hero_1.jpg');">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h2 class="text-white">Quảng cáo công ty bạn?</h2>
+                            <p class="mb-0 text-white lead">Happy Job - Happy Life</p>
+                        </div>
+                        <div class="col-md-3 ml-auto">
+                            <a href="signup.jsp" class="btn btn-warning btn-block btn-lg">Đăng ký ngay</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="site-footer">
+
+                <a href="#top" class="smoothscroll scroll-top">
+                    <span class="icon-keyboard_arrow_up"></span>
+                </a>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 col-md-4 mb-4 mb-md-0">
+                            <h3>Top Tìm Kiếm</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Web Design</a></li>
+                                <li><a href="#">Graphic Design</a></li>
+                                <li><a href="#">Web Developers</a></li>
+                                <li><a href="#">Python</a></li>
+                                <li><a href="#">HTML5</a></li>
+                                <li><a href="#">CSS3</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-4 mb-4 mb-md-0">
+                            <h3>Liên Kết</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="/services">Dịch vụ</a></li>
+                                <li><a href="portfolio.jsp">Nhà tuyển dụng</a></li>
+                                <li><a href="testimonials.jsp">Đánh giá</a></li>
+                                <li><a href="blog.jsp">Blog</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-4 mb-4 mb-md-0">
+                            <h3>Liên Hệ</h3>
+                            <div class="footer-social">
+                                <a href="#"><span class="icon-facebook"></span></a>
+                                <a href="#"><span class="icon-twitter"></span></a>
+                                <a href="#"><span class="icon-instagram"></span></a>
+                                <a href="#"><span class="icon-linkedin"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+	<!-- SCRIPTS -->
+        <script src="resources/js/jquery.min.js"></script>
+        <script src="resources/js/bootstrap.bundle.min.js"></script>
+        <script src="resources/js/isotope.pkgd.min.js"></script>
+        <script src="resources/js/stickyfill.min.js"></script>
+        <script src="resources/js/jquery.fancybox.min.js"></script>
+        <script src="resources/js/jquery.easing.1.3.js"></script>
+
+        <script src="resources/js/jquery.waypoints.min.js"></script>
+        <script src="resources/js/jquery.animateNumber.min.js"></script>
+        <script src="resources/js/owl.carousel.min.js"></script>
+
+        <script src="resources/js/bootstrap-select.min.js"></script>
+
+        <script src="resources/js/custom.js"></script>
+</body>
+</html>
